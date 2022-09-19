@@ -25,7 +25,7 @@ borders = "simple" # Alternatives are "none" and "simple"
 	# An array with a single value has the same effect as a simple value.
 	primary   = "#88C0D0"
 	secondary = "#81A1C1"
-	tertiary  = "#8FBCBB"
+	tertiary  = "#5E81AC"
 
 	# Hex values can use lower or uppercase.
 	title_primary   = "#5E81AC"
@@ -33,4 +33,4 @@ borders = "simple" # Alternatives are "none" and "simple"
 
 	# Lower precision values can use only 3 digits.
 	highlight          = "#4C566A"
-	highlight_inactive = "#D8DEE9"
+	highlight_inactive = "#4C566A"
