@@ -1,6 +1,8 @@
 use cursive::views::{Dialog, TextView};
 use cursive::align::HAlign;
 
+mod assets;
+
 const THEME_PATH: &str = "themes/dark.toml";
 const TITLE: &str = "~ Ummon ~";
 const UMMON_QUOTE: &str = "\nWe inhabit the In-between\n Stitching small singularities\n Like lattice crystals";
@@ -11,7 +13,9 @@ fn main() {
 
     siv.load_theme_file(THEME_PATH).unwrap();
 
-    let text_view = TextView::new(UMMON_QUOTE)
+    let full_text: String = [UMMON_QUOTE, assets::ascii::ASCII_LOGO].join("");
+        
+    let text_view = TextView::new(full_text)
         .h_align(HAlign::Center);
     
         let dialog = Dialog::around(text_view)
