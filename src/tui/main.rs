@@ -1,5 +1,6 @@
-use cursive::views::{Dialog, TextView};
+use cursive::views::{Dialog, TextView, LinearLayout};
 use cursive::align::HAlign;
+use cursive::view::{Scrollable};
 
 mod assets;
 
@@ -14,15 +15,19 @@ fn main() {
     siv.load_theme_file(THEME_PATH).unwrap();
 
     let full_text: String = [UMMON_QUOTE, assets::ascii::ASCII_LOGO].join("");
-        
-    let text_view = TextView::new(full_text)
-        .h_align(HAlign::Center);
     
-        let dialog = Dialog::around(text_view)
+    let text = TextView::new(full_text)
+        .h_align(HAlign::Center);
+
+    let layout = LinearLayout::vertical()
+        .child(text)
+        .scrollable();
+
+    let dialog = Dialog::around(layout)
         .title(TITLE)
         .button(BUTTON_OPTIONS[0], |s| s.quit())
         .button(BUTTON_OPTIONS[1], |s| s.quit());
-
+    
     siv.add_layer(dialog);
 
     siv.run();
